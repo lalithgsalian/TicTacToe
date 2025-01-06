@@ -1,0 +1,151 @@
+/* Set a background image and font style */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Custom font */
+    background-image: url('jr-korpa-9XngoIpxcEo-unsplash.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Ensure the image covers the entire screen */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Keep the background image fixed during scrolling */
+    color: white; /* White text to stand out against the background */
+}
+
+/* Style for the container holding the game */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center */
+    justify-content: center; /* Vertically center */
+    height: 80vh; /* Adjusted to fit within the viewport */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners for the container */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px;
+    width: 50vh;
+}
+
+/* Style for each row in the Tic Tac Toe grid */
+.row1 {
+    display: flex; /* Flexbox for row layout */
+    justify-content: center; /* Center buttons horizontally */
+    margin: 5px 0; /* Add spacing between rows */
+    gap: 10px ;
+}
+
+/* Style for the Tic Tac Toe boxes (buttons) */
+/* Style for the Tic Tac Toe boxes (buttons) */
+/* Style for the Tic Tac Toe boxes (buttons) */
+.box {
+    height: 100px;
+    width: 100px;
+    font-size: 70px; /* Set a large font size for 'X' and 'O' */
+    font-weight: bold;
+    border: 5px solid black;
+    background-color: #f0f0f0; /* Light gray background */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: black; /* Default color for 'X' and 'O' */
+    font-family: 'Pacifico', cursive; /* Change the font for the entire box */
+}
+
+/* Red 'O' and Green 'X' */
+.box.x {
+    color: green; /* 'X' in green */
+}
+
+.box.o {
+    color: red; /* 'O' in red */
+}
+
+.box:hover {
+    background-color: #e0e0e0; /* Lighten on hover */
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.box:active {
+    background-color: #d1d1d1; /* Darker background when clicked */
+}
+
+/* Style for the reset button */
+.reset-button {
+    margin-top: 30px; /* Space above the reset button */
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 10px;
+    transition: all 0.2s ease; /* Smooth transition */
+}
+
+.reset-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+.reset-button:active {
+    background-color: #003f7f; /* Even darker blue when clicked */
+}
+
+/* Message container for displaying "Congrats" */
+.msg-container {
+    display: none; /* Start hidden */
+    position: fixed; /* Fix the message to the top of the screen */
+    top: 30px; /* 20px down from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to center */
+    background-color: #2ed354; /* Green background for success */
+    color: white; /* White text color */
+    font-size: 24px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    padding: 15px 30px; /* Add some space inside the box */
+    border-radius: 20px; /* Rounded corners for the message box */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-align: center; /* Center the text inside the box */
+    z-index: 1000; /* Keep it above other elements */
+    animation: fadeIn 0.5s ease-in-out; /* Fade-in effect for the message */
+}
+
+/* Keyframes for the fade-in effect */
+/* @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+@media (max-width: 768px) {
+    .container {
+        width: 90vw; /* Adjust container width for smaller screens */
+        height: auto; /* Allow the container to expand for content */
+        padding: 10px;
+    }
+
+    .box {
+        height: 55px; /* Reduce the box size */
+        width: 55px; /* Reduce the box size */
+        font-size: 40px; /* Reduce the font size */
+    }
+
+    .reset-button {
+        margin-top: 20px; /* Adjust spacing */
+        padding: 10px 20px; /* Smaller button padding */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .msg-container {
+        font-size: 20px; /* Adjust font size for smaller screens */
+        padding: 1px 22px 0px 25px; /* Smaller padding */
+    }
+}
